@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ASTRO-SHIELD Dashboard</title>
+
+<style>
+body {
+    background: #07152e;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 { color: #00d5ff; }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #14294b;
+    padding: 25px;
+    width: 220px;
+    border-radius: 15px;
+    border: 1px solid #00c8ff;
+}
+
+.value {
+    font-size: 30px;
+    color: #00d5ff;
+}
+
+button {
+    padding: 12px 25px;
+    background: #00c8ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🚀 ASTRO-SHIELD</h1>
+<h2>Astronaut Health Dashboard</h2>
+
+<h3 id="welcome"></h3>
+
+<div class="container">
+
+<div class="card">
+<h3>❤️ Heart Rate</h3>
+<p class="value">75 BPM</p>
+</div>
+
+<div class="card">
+<h3>🫁 SpO₂</h3>
+<p class="value">98%</p>
+</div>
+
+<div class="card">
+<h3>🌡️ Temperature</h3>
+<p class="value">36.8 °C</p>
+</div>
+
+<div class="card">
+<h3>🛰️ Mission Status</h3>
+<p class="value">ACTIVE</p>
+</div>
+
+</div>
+
+<br>
+<button onclick="history.back()">Back</button>
+
+<script>
+let name = localStorage.getItem("astronautName");
+
+document.getElementById("welcome").innerText =
+"Welcome, Astronaut " + (name || "Explorer");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+.hero {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    color: #00d5ff;
+}
+
+.hero-content h2 {
+    font-size: 25px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00c8ff;
+    color: #07152e;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+}

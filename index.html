@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronaut Health Monitoring</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #081525;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #10243b;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #38d9ff;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            color: #38d9ff;
+        }
+
+        /* Home */
+        .hero {
+            padding: 65px 30px;
+            text-align: center;
+            background: linear-gradient(120deg, #102d4c, #07111f);
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: #38d9ff;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #d0dce8;
+        }
+
+        .hero button {
+            padding: 13px 25px;
+            margin-top: 25px;
+            background: #13bde8;
+            color: #061421;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Cards */
+        .container {
+            padding: 35px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #38d9ff;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #142b43;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #24435f;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #38d9ff;
+        }
+
+        .card p {
+            color: #d0dce8;
+            line-height: 1.6;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #38d9ff;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #10243b;
+            text-align: center;
+            padding: 22px;
+            margin-top: 30px;
+            color: #c5d3df;
+        }
+
+        @media(max-width: 600px) {
+            .navbar {
+                justify-content: center;
+            }
+
+            .navbar a {
+                display: inline-block;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🚀 ASTRO HEALTH
+        </div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="doctor.html">Doctor</a>
+            <a href="alerts.html">Alerts</a>
+            <a href="history.html">History</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="login.html">Logout</a>
+        </div>
+
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section class="hero">
+
+        <h1>Astronaut Health Monitoring System</h1>
+
+        <p>
+            Welcome to the Astronaut Health Monitoring System.
+            <br>
+            Monitor astronaut health conditions in real time.
+            <br>
+            Track heart rate, oxygen level, body temperature
+            and other important health information.
+        </p>
+
+        <button onclick="location.href='dashboard.html'">
+            Explore Dashboard
+        </button>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section class="container">
+
+        <h2>Our Features</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🏠 Home</h3>
+                <p>Access the main page and explore the system.</p>
+                <a href="index.html">View Home</a>
+            </div>
+
+            <div class="card">
+                <h3>📊 Dashboard</h3>
+                <p>Monitor astronaut health data and vital signs.</p>
+                <a href="dashboard.html">View Dashboard</a>
+            </div>
+
+            <div class="card">
+                <h3>👤 Profile</h3>
+                <p>View astronaut personal and health information.</p>
+                <a href="profile.html">View Profile</a>
+            </div>
+
+            <div class="card">
+                <h3>👨‍⚕️ Doctor</h3>
+                <p>View doctor details and health consultation information.</p>
+                <a href="doctor.html">View Doctor</a>
+            </div>
+
+            <div class="card">
+                <h3>🚨 Alerts</h3>
+                <p>Check warnings about abnormal health readings.</p>
+                <a href="alerts.html">View Alerts</a>
+            </div>
+
+            <div class="card">
+                <h3>📋 History</h3>
+                <p>View previous health records and monitoring data.</p>
+                <a href="history.html">View History</a>
+            </div>
+
+            <div class="card">
+                <h3>📈 Analytics</h3>
+                <p>Analyze health data through charts and reports.</p>
+                <a href="analytics.html">View Analytics</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="container">
+
+        <h2>About Our Project</h2>
+
+        <div class="card">
+            <p>
+                Our project helps monitor astronaut health
+                during space missions. It provides health
+                information such as heart rate, oxygen level,
+                body temperature and blood pressure.
+                It also helps identify abnormal readings
+                and provides alerts for further medical review.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Astro Health Monitoring System</p>
+        <p>Designed for Astronaut Health Monitoring</p>
+    </footer>
+
+</body>
+</html>

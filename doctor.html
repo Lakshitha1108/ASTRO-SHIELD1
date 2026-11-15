@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Doctor Consultation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="navbar-container"></div>
+<header>
+    <h2>🚀 ASTRO HEALTH</h2>
+    <a href="dashboard.html">Dashboard</a>
+</header>
+
+<div class="container">
+    <h1>Doctor Consultation</h1>
+    <p>Medical support for astronauts.</p>
+
+    <div class="card">
+        <h2>👨‍⚕️ Medical Doctor</h2>
+        <p>Name: Dr. John Smith</p>
+        <p>Department: Space Medicine</p>
+        <p>Status: Demo Profile</p>
+    </div>
+
+    <div class="card">
+        <h2>Book Consultation</h2>
+
+        <form onsubmit="bookAppointment(event)">
+
+            <label>Astronaut Name</label>
+            <input type="text" placeholder="Enter Name" required>
+
+            <label>Select Doctor</label>
+            <select required>
+                <option value="">Choose Doctor</option>
+                <option>Dr. John Smith</option>
+                <option>Dr. David</option>
+                <option>Dr. Sarah</option>
+            </select>
+
+            <label>Appointment Date</label>
+            <input type="date" required>
+
+            <label>Medical Problem</label>
+            <textarea placeholder="Describe your problem"
+            required></textarea>
+
+            <button type="submit">Book Appointment</button>
+
+        </form>
+
+        <p id="appointment"></p>
+    </div>
+</div>
+
+<script>
+function bookAppointment(event) {
+    event.preventDefault();
+    document.getElementById("appointment").innerText =
+        "Demo appointment submitted successfully!";
+    event.target.reset();
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>

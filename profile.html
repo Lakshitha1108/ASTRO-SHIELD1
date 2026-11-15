@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronaut Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body
+        {
+            background: #050d20;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-box {
+            background: linear-gradient(145deg, #1760a5, #071b42);
+            width: 90%;
+            max-width: 850px;
+            padding: 65px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 65px;
+        }
+
+        input {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 35px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            font-size: 22px;
+            background: #f1f1f1;
+            color: #222;
+        }
+
+        input::placeholder {
+            color: #777;
+        }
+
+        button {
+            background: #00c8df;
+            color: #06314b;
+            padding: 20px 45px;
+            border: none;
+            border-radius: 12px;
+            font-size: 22px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #00e5ff;
+        }
+
+        @media(max-width: 600px) {
+            .profile-box {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 25px;
+                margin-bottom: 35px;
+            }
+
+            input {
+                font-size: 16px;
+                padding: 16px;
+                margin-bottom: 22px;
+            }
+
+            button {
+                font-size: 17px;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-box">
+
+        <h1>Enter Astronaut Details</h1>
+
+        <form id="profileForm">
+
+            <input type="text"
+            placeholder="Astronaut Name" required>
+
+            <input type="text"
+            placeholder="Astronaut ID" required>
+
+            <input type="text"
+            placeholder="Mission Name" required>
+
+            <input type="number"
+            placeholder="Age" min="18" max="100" required>
+
+            <button type="submit">Save Profile</button>
+
+        </form>
+
+    </div>
+
+    <script>
+        document.getElementById("profileForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Astronaut Profile Saved Successfully!");
+
+        });
+    </script>
+
+</body>
+</html>

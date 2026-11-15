@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Astro Health Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="navbar-container"></div>
+<div class="login-box">
+    <h1>🚀 ASTRO HEALTH</h1>
+    <h2>Welcome Back</h2>
+    <p>Login to your astronaut health account</p>
+
+    <form onsubmit="loginUser(event)">
+        <input type="email" placeholder="Enter Email" required>
+        <input type="password" placeholder="Enter Password" required>
+
+        <select required>
+            <option value="">Select Role</option>
+            <option>Astronaut</option>
+            <option>Doctor</option>
+            <option>Admin</option>
+        </select>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="message"></p>
+    <a href="index.html">Back to Home</a>
+</div>
+
+<script>
+function loginUser(event) {
+    event.preventDefault();
+    alert("Demo Login Successful!");
+    window.location.href = "dashboard.html";
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>

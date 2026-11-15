@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTRO-SHIELD | Emergency Alerts</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #06152b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background: #102747;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.navbar a {
+    color: #00e5ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 700px;
+    margin: 35px auto;
+    padding: 28px;
+    background: #102747;
+    border-radius: 15px;
+}
+
+h1 {
+    color: #00e5ff;
+    text-align: center;
+}
+
+.status {
+    padding: 15px;
+    margin: 12px 0;
+    background: #193b55;
+    border-radius: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0 18px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    padding: 13px 20px;
+    background: #00c8e8;
+    color: #06152b;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+}
+
+#result {
+    margin-top: 18px;
+    color: #62ffae;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="home.html">Home</a>
+    <a href="doctor.html">Login</a>
+    <a href="profile.html">Profile</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="analytics.html">Analytics</a>
+    <a href="alerts.html">Alerts</a>
+    <a href="history.html">History</a>
+    <a href="control-room.html">Mission Control</a>
+</nav>
+
+<div class="container">
+
+    <h1>🚀 ASTRO-SHIELD</h1>
+    <h2>Emergency Alert System</h2>
+
+    <div class="status">
+        <h3>🟢 Normal Status</h3>
+        <p>Sample reading is within the demo range.</p>
+    </div>
+
+    <div class="status">
+        <h3>🟡 Warning Alert</h3>
+        <p>Sample reading requires attention.</p>
+    </div>
+
+    <div class="status">
+        <h3>🔴 Emergency Alert</h3>
+        <p>Demo emergency notification.</p>
+    </div>
+
+    <hr>
+
+    <h2>📡 Send Alert to Mission Control</h2>
+
+    <form id="alertForm">
+
+        <label>Astronaut Name</label>
+        <input
+            type="text"
+            id="astronaut"
+            placeholder="Enter astronaut name"
+            required
+        >
+
+        <label>Alert Type</label>
+        <select id="alertType" required>
+            <option value="">Select alert type</option>
+            <option value="Heart Rate">Heart Rate</option>
+            <option value="Oxygen Level">Oxygen Level</option>
+            <option value="Temperature">Temperature</option>
+            <option value="Emergency">Emergency</option>
+        </select>
+
+        <label>Alert Message</label>
+        <textarea
+            id="message"
+            placeholder="Enter your message"
+            required
+        ></textarea>
+
+        <button type="submit">🚨 SEND ALERT</button>
+
+    </form>
+
+    <p id="result" aria-live="polite"></p>
+
+</div>
+
+<script>
+const form = document.getElementById("alertForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const alertData = {
+        id: Date.now().toString(),
+        astronaut: document.getElementById("astronaut").value.trim(),
+        type: document.getElementById("alertType").value,
+        message: document.getElementById("message").value.trim(),
+        time: new Date().toLocaleString(),
+        status: "NEW"
+    };
+
+    if (!alertData.astronaut || !alertData.type ||
+        !alertData.message) {
+        document.getElementById("result").textContent =
+            "Please fill in all fields.";
+        return;
+    }
+
+    try {
+        const alerts = JSON.parse(
+            localStorage.getItem("astroAlerts") || "[]"
+        );
+
+        alerts.unshift(alertData);
+
+        localStorage.setItem(
+            "astroAlerts",
+            JSON.stringify(alerts)
+        );
+
+        document.getElementById("result").textContent =
+            "✅ Demo alert sent to Mission Control!";
+
+        form.reset();
+
+    } catch (error) {
+        document.getElementById("result").textContent =
+            "Unable to save alert. Please check browser storage.";
+    }
+
+});
+</script>
+
+</body>
+</html>
